@@ -5,9 +5,13 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
+#include <array>
 using namespace std;
 
 double matrix[20][20];
+
+
 
 /*void displayCities(){
 	
@@ -56,9 +60,9 @@ inSS.close();
 
 int main() {
 
-	double numOfCities;
-	double numTours;
-	double numGenerations;
+	int numOfCities;
+	int numTours;
+	int numGenerations;
 	double percentMutate;
 	
 
@@ -79,14 +83,21 @@ int main() {
 	
 	loadMatrix();
 
+	vector<double> map(numOfCities);
+	int i = 0;
+	while(i != numOfCities){
 
+	int a = i;
+	int b = 0;
+	if(numOfCities > 20) {
 
-
-
-
-
-
-
+		b = i/20;
+		a = i % 20;
+	}
+	map.at(i) = matrix[a][b];
+	cout << map[i] << " ";
+	i++;
+}
 
 return 0;
 
